@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+ <!-- Add the first button -->
+    <a href="https://github.com/new" target="_blank">
+      <button>make post to github </button>
+    </a>
+ <!-- Add the first button -->
+    <a href="https://search.google.com/search-console?resource_id=https%3A%2F%2Fsailoans.github.io%2FEntertainment%2F" target="_blank">
+      <button>Index in Google</button>
+    </a>
+
+    <!-- Add the second button -->
+    <a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsailoans.github.io%2FEntertainment%2F" target="_blank">
+      <button>Google Site Map</button>
+    </a>
+    <title>IMDb Open Graph Meta Tags Generator</title>
+</head>
+<body>
+    <h1>IMDb Open Graph Meta Tags Generator</h1>
+    <p>Enter an IMDb URL:</p>
+    <input type="text" id="imdbUrl" placeholder="https://www.imdb.com/title/tt0111161/">
+    <br>
+    <br>
+    <button onclick="generateAndDisplayHead()">Get Movies details </button>
+
+    <h2>Movies Details </h2>
+    <textarea id="headSection" rows="15" cols="120" readonly></textarea>
+     <br>
+    <br>
+    <button onclick="copyToClipboard()">Copy to Clipboard</button>
+
+    <script>
+        function generateAndDisplayHead() {
+            const imdbUrl = document.getElementById("imdbUrl").value;
+
+            // Extract the IMDb ID from the URL
+            const imdbIdMatch = imdbUrl.match(/\/title\/(tt\d+)\//);
+            if (imdbIdMatch && imdbIdMatch[1]) {
+                const imdbId = imdbIdMatch[1];
+
+                // Fetch movie information from OMDB API
+                fetch(`https://www.omdbapi.com/?i=${imdbId}&apikey=fc021bce`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const metaTags = `
+                            <meta property="og:title" content="${data.Title}">
+                            <meta property="og:description" content="${data.Plot}">
+                            <meta property="og:image" content="${data.Poster}">
+                            <meta property="og:type" content="movie">
+                            <meta property="og:site_name" content="IMDb">
+                            <meta property="og:locale" content="en_US">
+                            <meta property="og:release_date" content="${data.Released}">
+                        `;
+
+                        const headContent = `
+                            <html>
+                            <head>
+                                <title>IMDb Open Graph Meta Tags Generator Result</title>
+                                ${metaTags}
+                        `;
+
+                        document.getElementById("headSection").value = headContent;
+                    })
+                    .catch(error => {
+                        console.error("Error fetching data from OMDB API", error);
+                    });
+            } else {
+                alert("Invalid IMDb URL. Please enter a valid IMDb URL.");
+            }
+        }
+
+        function copyToClipboard() {
+            const headSectionTextarea = document.getElementById("headSection");
+            headSectionTextarea.select();
+            document.execCommand("copy");
+        }
+    </script>
+
+
+    <title>Movie Details and Sharing Script</title>
+</head>
+<body>
+    <h1>Movie Details for Social Media</h1>
+    <textarea id="movieDetails" rows="15" cols="120"></textarea>
+    <br>
+    <button onclick="pasteToMovieDetails()">Paste</button>
+
+    <h1>Merged Text</h1>
+    <div id="mergedTextContainer">
+        <textarea id="mergedText"rows="15" cols="120"></textarea>
+        <br>
+        <input type="text" id="replacementText1" placeholder="Text to Replace" value="Entertainment">
+        <input type="text" id="replacementText2" placeholder="Replacement Text">
+        <button onclick="replaceText()">Replace Text</button>
+         <br>
+    <br><button onclick="copyMergedText()">Copy</button>
+    </div>
+
+    <h1>Original script</h1>
+    <textarea id="sharingScript" rows="15" cols="120">gdf</textarea>
+
+    <script>
+        function pasteToMovieDetails() {
+            const movieDetailsTextarea = document.getElementById("movieDetails");
+            navigator.clipboard.readText().then(clipboardText => {
+                movieDetailsTextarea.value = clipboardText;
+                // Automatically update the merged text when pasting
+                updateMergedText();
+            });
+        }
+
+        function copyMergedText() {
+            const mergedTextTextarea = document.getElementById("mergedText");
+            mergedTextTextarea.select();
+            document.execCommand("copy");
+        }
+
+        function updateMergedText() {
+            const movieDetailsTextarea = document.getElementById("movieDetails").value;
+            const sharingScriptTextarea = document.getElementById("sharingScript").value;
+            const mergedTextTextarea = document.getElementById("mergedText");
+
+            mergedTextTextarea.value = movieDetailsTextarea + "\n" + sharingScriptTextarea;
+        }
+
+        function replaceText() {
+            const mergedTextTextarea = document.getElementById("mergedText");
+            const replacementText1 = document.getElementById("replacementText1").value;
+            const replacementText2 = document.getElementById("replacementText2").value;
+            const currentText = mergedTextTextarea.value;
+
+            // Replace all occurrences of the text from the first column with the text from the second column
+            const newText = currentText.split(replacementText1).join(replacementText2);
+            mergedTextTextarea.value = newText;
+        }
+    </script>
+</body>
+</html> make buttons blue when clicked in this html codes
