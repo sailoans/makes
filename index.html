@@ -19,7 +19,10 @@
     <a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsailoans.github.io%2FEntertainment%2F" target="_blank">
       <button>Google Site Map</button>
     </a>
-    
+     <!-- Add the second button -->
+    <a href="https://github.com/sailoans?tab=repositories" target="_blank">
+      <button>Goto Repository</button>
+    </a>
     <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +76,7 @@
     <button onclick="generateAndDisplayHead()">Get Movies details </button>
 
     <h2>Movies Details </h2>
-    <textarea id="headSection" rows="1" cols="12" readonly></textarea>
+    <textarea id="headSection" rows="15" cols="120" readonly></textarea>
      <br>
     <br>
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
@@ -92,7 +95,7 @@
                     .then(response => response.json())
                     .then(data => {
                         const metaTags = `
-                            <meta property="og:title" content="watch or Download ${data.Title}">
+                            <meta property="og:title" content="Watch or Download ${data.Title}">
                             <meta property="og:description" content="${data.Plot}">
                             <meta property="og:image" content="${data.Poster}">
                             <meta property="og:type" content="movie">
