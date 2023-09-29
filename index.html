@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +11,57 @@
     <a href="https://search.google.com/search-console/welcome" target="_blank">
       <button>Index in Google</button>
     </a>
-
+ <!-- Add the first button -->
+    <a href="https://www.xml-sitemaps.com/" target="_blank">
+      <button>Create SiteMap</button>
+    </a>
     <!-- Add the second button -->
     <a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fsailoans.github.io%2FEntertainment%2F" target="_blank">
       <button>Google Site Map</button>
     </a>
+    
+    <!DOCTYPE html>
+<html>
+<head>
+  
+    <style>
+        /* Style for the text box and copy button */
+        #textToCopy {
+            width: 300px; /* Set the width of the text box */
+            height: 40px; /* Set the height of the text box */
+            font-size: 16px; /* Set the font size */
+        }
+
+        #copyButton {
+            width: 100px; /* Set the width of the copy button */
+            height: 40px; /* Set the height of the copy button */
+            font-size: 16px; /* Set the font size */
+        }
+    </style>
+</head>
+<body>
+    <h2>Your Website Url (/Add Your Repository Name)</h2>
+
+    <input type="text" id="textToCopy" value="https://sailoans.github.io/">
+    <button id="copyButton" onclick="copyText()">Copy</button>
+
+    <script>
+        function copyText() {
+            /* Get the text field */
+            var copyText = document.getElementById("textToCopy");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field to the clipboard */
+            document.execCommand("copy");
+        }
+    </script>
+</body>
+</html>
+
+    
     <title>IMDb Open Graph Meta Tags Generator</title>
 </head>
 <body>
@@ -26,7 +73,7 @@
     <button onclick="generateAndDisplayHead()">Get Movies details </button>
 
     <h2>Movies Details </h2>
-    <textarea id="headSection" rows="15" cols="120" readonly></textarea>
+    <textarea id="headSection" rows="1" cols="12" readonly></textarea>
      <br>
     <br>
     <button onclick="copyToClipboard()">Copy to Clipboard</button>
@@ -91,15 +138,15 @@
     <div id="mergedTextContainer">
         <textarea id="mergedText"rows="15" cols="120"></textarea>
         <br>
-        <input type="text" id="replacementText1" placeholder="Text to Replace" value="Entertainment">
-        <input type="text" id="replacementText2" placeholder="Replacement Text">
+        <input type="text" id="replacementText1" placeholder="Text to Replace" value="old Repository Name">
+        <input type="text" id="replacementText2" placeholder="Your Repository Name">
         <button onclick="replaceText()">Replace Text</button>
          <br>
     <br><button onclick="copyMergedText()">Copy</button>
     </div>
 
     <h1>Original script</h1>
-    <textarea id="sharingScript" rows="15" cols="120">
+    <textarea id="sharingScript" rows="5" cols="12">
 
 <meta name="google-site-verification" content="PJ2GuMKJnry4layTa8N_EsewUFUSaawicnLOPbdkxLs" />
     <meta charset="utf-8">
@@ -187,11 +234,11 @@
 <body>
 <div id="sociallocker">
     <div id="sociallocker-links">
-        <a href="javascript:void(0);" class="social-1 fb" onclick="share('https://www.facebook.com/sharer/sharer.php?u=https://sailoans.github.io/Entertainment')"><i class="fab fa-facebook-f"></i></a>
-        <a href="javascript:void(0);" class="social-1 tw" onclick="share('https://twitter.com/intent/tweet?url=https://sailoans.github.io/Entertainment&text=')"><i class="fab fa-twitter"></i></a>
-        <a href="javascript:void(0);" class="social-1 pi" onclick="share('https://pinterest.com/pin/create/button/?url=https://sailoans.github.io/Entertainment&media=&description=')"><i class="fab fa-pinterest-p"></i></a>
-        <a href="javascript:void(0);" class="social-1 in" onclick="share('https://www.linkedin.com/shareArticle?mini=true&url=https://sailoans.github.io/Entertainment')"><i class="fab fa-linkedin-in"></i></a>
-        <a href="javascript:void(0);" class="social-1 email" onclick="share('mailto:info@example.com?&subject=&cc=&bcc=&body=https://sailoans.github.io/Entertainment%0A')"><i class="fas fa-envelope"></i></a>
+        <a href="javascript:void(0);" class="social-1 fb" onclick="share('https://www.facebook.com/sharer/sharer.php?u=https://sailoans.github.io/old Repository Name')"><i class="fab fa-facebook-f"></i></a>
+        <a href="javascript:void(0);" class="social-1 tw" onclick="share('https://twitter.com/intent/tweet?url=https://sailoans.github.io/old Repository Name&text=')"><i class="fab fa-twitter"></i></a>
+        <a href="javascript:void(0);" class="social-1 pi" onclick="share('https://pinterest.com/pin/create/button/?url=https://sailoans.github.io/old Repository Name&media=&description=')"><i class="fab fa-pinterest-p"></i></a>
+        <a href="javascript:void(0);" class="social-1 in" onclick="share('https://www.linkedin.com/shareArticle?mini=true&url=https://sailoans.github.io/old Repository Name')"><i class="fab fa-linkedin-in"></i></a>
+        <a href="javascript:void(0);" class="social-1 email" onclick="share('mailto:info@example.com?&subject=&cc=&bcc=&body=https://sailoans.github.io/old Repository Name')"><i class="fas fa-envelope"></i></a>
     </div>
     <div id="sociallocker-content">
         <a href="https://trianglerockers.com/gitu" id="downloadButton">Download Now</a>
@@ -255,4 +302,4 @@
         }
     </script>
 </body>
-</html> make buttons blue when clicked in this html codes
+</html> 
