@@ -99,7 +99,131 @@
     </div>
 
     <h1>Original script</h1>
-    <textarea id="sharingScript" rows="15" cols="120">gdf</textarea>
+    <textarea id="sharingScript" rows="15" cols="120">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="google-site-verification" content="PJ2GuMKJnry4layTa8N_EsewUFUSaawicnLOPbdkxLs" />
+    <meta charset="utf-8">
+    <meta name="description" content="Download Latest Movies, 480p Movies, 720p Movies 1080p and 2160p 4K movies, Dual Audio Movies and Web Series, Netflix WEB Series, Amazon Prime Series and lots more Series in Dual Audio Hindi Dubbed."/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="A Haunting in Venice">
+    <meta property="og:description" content="🚀 Ready to Dive into the Latest Movie Magic? 🍿 Grab Your Popcorn and Get Hooked! 🎬 #MovieNight #MustWatch #MovieMagic">
+    <meta property="og:image" content="https://sailoans.github.io/Entertainment/Thumbnail_Venice.jpg">
+    <style>
+        @import "https://use.fontawesome.com/releases/v5.0.10/css/all.css";
+        html, body {
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            padding: 20px; /* Adjust padding for smaller screens */
+            background: #f7f8f9;
+        }
+        #sociallocker {
+            background-color: #EEEEEE;
+            text-align: center;
+            position: relative;
+            max-width: 100%; /* Ensure it spans the full width of the screen */
+            height: auto; /* Allow the height to adjust according to content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 10px;
+            flex-direction: column; /* Stack content vertically for small screens */
+        }
+        #sociallocker-overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            font-size: 16px; /* Reduce font size for small screens */
+            font-weight: bold;
+            color: #ffffff;
+            transition: all 0.2s ease;
+        }
+        .social-1 {
+            text-decoration: none;
+            color: #ffffff;
+            display: inline-block;
+            width: 60px; /* Make social icons bigger */
+            height: 60px;
+            overflow: hidden;
+            margin-right: 10px;
+            background-color: #0074E4; /* Blue background color */
+            border-radius: 50%; /* Make the buttons circular */
+        }
+        /* Add responsive styles for social icon hover */
+        .social-1:hover {
+            background-color: #005CBF; /* Darker blue on hover */
+        }
+        .social-1 i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 24px; /* Increase icon size */
+        }
+        /* Responsive styles for the buttons */
+        #sociallocker-content a {
+            display: none; /* Initially hide the download button */
+            text-decoration: none;
+            padding: 15px 30px; /* Increase padding for a larger button */
+            background-color: #0074E4; /* Blue background color */
+            color: #ffffff;
+            border-radius: 10px; /* Rounded corners */
+            font-weight: bold;
+            font-size: 18px; /* Increase font size */
+            margin-top: 20px; /* Add space below the buttons */
+        }
+        /* Add responsive styles for smaller screens */
+        @media (max-width: 768px) {
+            /* Additional styles specific to smaller screens */
+            #sociallocker-overlay {
+                font-size: 14px; /* Further reduce font size for very small screens */
+            }
+            .social-1 {
+                width: 50px; /* Make social icons even bigger for smaller screens */
+                height: 50px;
+                font-size: 20px; /* Adjust icon size */
+            }
+            #sociallocker-content a {
+                padding: 12px 24px; /* Adjust padding for smaller buttons */
+                font-size: 16px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="sociallocker">
+    <div id="sociallocker-links">
+        <a href="javascript:void(0);" class="social-1 fb" onclick="share('https://www.facebook.com/sharer/sharer.php?u=https://sailoans.github.io/Entertainment')"><i class="fab fa-facebook-f"></i></a>
+        <a href="javascript:void(0);" class="social-1 tw" onclick="share('https://twitter.com/intent/tweet?url=https://sailoans.github.io/Entertainment&text=')"><i class="fab fa-twitter"></i></a>
+        <a href="javascript:void(0);" class="social-1 pi" onclick="share('https://pinterest.com/pin/create/button/?url=https://sailoans.github.io/Entertainment&media=&description=')"><i class="fab fa-pinterest-p"></i></a>
+        <a href="javascript:void(0);" class="social-1 in" onclick="share('https://www.linkedin.com/shareArticle?mini=true&url=https://sailoans.github.io/Entertainment')"><i class="fab fa-linkedin-in"></i></a>
+        <a href="javascript:void(0);" class="social-1 email" onclick="share('mailto:info@example.com?&subject=&cc=&bcc=&body=https://sailoans.github.io/Entertainment%0A')"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div id="sociallocker-content">
+        <a href="https://trianglerockers.com/gitu" id="downloadButton">Download Now</a>
+    </div>
+    <div id="sociallocker-overlay"><i class="fas fa-lock"></i>Unlock content with a social share.</div>
+</div>
+<script>
+    function share(url) {
+        var web_window = window.open(url, 'Share Link', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600,top=' + (screen.height / 2 - 300) + ',left=' + (screen.width / 2 - 300));
+
+        var check_window_close = setInterval(function () {
+            if (web_window.closed) {
+                clearInterval(check_window_close);
+
+                // Show the download button after sharing
+                document.querySelector("#downloadButton").style.display = "inline-block";
+                document.querySelector("#sociallocker-links").style.display = "none";
+                document.querySelector("#sociallocker-overlay").style.display = "none";
+                document.querySelector("#sociallocker-content").style.top = "0";
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>
+</textarea>
 
     <script>
         function pasteToMovieDetails() {
